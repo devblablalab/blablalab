@@ -1,0 +1,29 @@
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin dotted-line {
+    border-bottom: 2px dashed $gray;
+}
+
+@mixin svg-default {
+    width: 160px;
+    height: 50px;
+}
+
+.container {
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.dotted-line {
+    @include dotted-line
+}

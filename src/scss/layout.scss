@@ -1,0 +1,60 @@
+#main-header {
+    padding: 30px 20px;
+    .container {
+        @include flex-between;
+    }
+
+    #brand {
+        @include flex-center;
+        @include svg-default;
+    }
+
+    #learn-more {
+        @include flex-center;
+        background-color: $gray;
+        color: $light;
+        padding: 4px 12px;
+        font-size: 28px;
+        font-weight: 700;
+        max-height: 45px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all .2s;
+
+        &:hover {
+            background: $light;
+            color: $gray;
+        }
+    }
+}
+
+#main-content {
+    padding: 40px 0;
+    .projects {
+        h2 {
+            font-size: 20px;
+            color: $gray;
+            text-align: center;
+            padding: 30px 0;
+            @include dotted-line;
+        }
+
+        .project {
+            @include flex-center;
+            flex-direction: column;
+            gap: 15px;
+            padding: 40px 10px;
+            @include dotted-line;
+
+            svg {
+                @include svg-default;
+            }
+
+            .description {
+                text-align: center;
+                color: $gray;
+                font-size: 14px;
+            }
+        }
+    }
+}
