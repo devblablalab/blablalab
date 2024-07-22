@@ -10,8 +10,18 @@
     <header x-data="header" id="main-header" role="banner">
       <div class="container">
         <a x-html="brand" href="/" id="brand" aria-label="Brand do Site"></a>
-        <div id="learn-more">?</div>
+        <button @click="showInfo = true" id="learn-more">?</button>
       </div>
+      <template x-if="showInfo">
+        <div id="banner-info" x-transition>
+          <header>
+            <div class="container">
+              <div x-html="brand" id="brand-info" aria-label="Brand do Site"></div>
+              <button @click="showInfo = false" x-html="closeBanner" class="close-banner"></button>
+            </div>
+          </header>
+        </div>
+      </template>
     </header>
     <main id="main-content" role="main">
       <section class="projects" x-data="projects" aria-label="Projetos da Blablalab">
@@ -61,7 +71,13 @@
               <path d="M186.47 1.12988H194.28V41.5999H208.47V48.2699H186.47V1.13988V1.12988Z" fill="white"/>
               <path d="M211.25 42.27V34.33L217.24 28.4H234.54V23.42L232.05 20.93H221.48L218.99 23.42V25.57H211.52V21.67L218.39 14.73H235.16L242.03 21.67V48.27H235.09V43.09L229.7 48.27H217.24L211.25 42.28V42.27ZM228.96 42.27L234.55 36.88V34.05H220.88L218.73 36.14V40.25L220.75 42.27H228.96Z" fill="white"/>
               <path d="M247.64 41.3299V0.189941H255.25V19.9799L260.7 14.7299H272.75L279.48 21.4599V41.5199L272.75 48.2499H254.5L247.63 41.3099L247.64 41.3299ZM269.06 41.7399L271.89 38.9099V24.0999L269.06 21.2699H261.92L255.25 27.9399V38.9099L258.08 41.7399H269.06Z" fill="white"/>
-            </svg>`
+            </svg>`,
+            closeBanner: `
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path opacity="0.4" d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" fill="none"></path>
+              <path d="M13.0594 12.0001L15.3594 9.70011C15.6494 9.41011 15.6494 8.93011 15.3594 8.64011C15.0694 8.35011 14.5894 8.35011 14.2994 8.64011L11.9994 10.9401L9.69937 8.64011C9.40937 8.35011 8.92937 8.35011 8.63938 8.64011C8.34938 8.93011 8.34938 9.41011 8.63938 9.70011L10.9394 12.0001L8.63938 14.3001C8.34938 14.5901 8.34938 15.0701 8.63938 15.3601C8.78938 15.5101 8.97937 15.5801 9.16937 15.5801C9.35937 15.5801 9.54937 15.5101 9.69937 15.3601L11.9994 13.0601L14.2994 15.3601C14.4494 15.5101 14.6394 15.5801 14.8294 15.5801C15.0194 15.5801 15.2094 15.5101 15.3594 15.3601C15.6494 15.0701 15.6494 14.5901 15.3594 14.3001L13.0594 12.0001Z" fill="#ffff"></path>
+            </svg>`,
+            showInfo: false
           }));
 
           Alpine.data('projects', () => ({
