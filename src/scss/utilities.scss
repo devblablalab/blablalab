@@ -10,6 +10,16 @@
     align-items: center;
 }
 
+@mixin flex-row-y-center {
+    display: flex;
+    align-items: center;
+}
+
+@mixin flex-column-y-center {
+    display: flex;
+    justify-content: center;
+}
+
 @mixin dotted-line {
     border-bottom: 2px dashed $gray;
 }
@@ -26,4 +36,11 @@
 
 .dotted-line {
     @include dotted-line
+}
+
+.section-title {
+    font-size: 20px;
+    color: $gray;
+    text-align: center;
+    padding: 30px 0;
 }

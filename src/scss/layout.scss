@@ -32,10 +32,6 @@
     padding: 40px 0;
     .projects {
         h2 {
-            font-size: 20px;
-            color: $gray;
-            text-align: center;
-            padding: 30px 0;
             @include dotted-line;
         }
 
@@ -54,6 +50,34 @@
                 text-align: center;
                 color: $gray;
                 font-size: 14px;
+            }
+        }
+    }
+
+    .videos {
+        padding: 20px 0;
+    }
+}
+
+#main-footer {
+    padding: 20px;
+    @include flex-center;
+
+    .socials {
+        @include flex-row-y-center;
+        gap: 25px;
+
+        .social-link {
+            transition: opacity .2s;
+
+            &:hover {
+                opacity: .6;
+            }
+
+            svg {
+                width: 25px;
+                height: 25px;
+                color: $light;
             }
         }
     }
