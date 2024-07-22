@@ -3,34 +3,41 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Blablalab</title>
+    <meta name="description" content="Blablalab, sua dose de comunicologia">
   </head>
   <body>
-    <header x-data="header" id="main-header">
+    <header x-data="header" id="main-header" role="banner">
       <div class="container">
-        <a x-html="brand" href="/" id="brand"></a>
+        <a x-html="brand" href="/" id="brand" aria-label="Brand do Site"></a>
         <div id="learn-more">?</div>
       </div>
     </header>
-    <main id="main-content">
-      <section class="projects" x-data="projects">
+    <main id="main-content" role="main">
+      <section class="projects" x-data="projects" aria-label="Projetos da Blablalab">
         <h2 class="section-title">Últimos experimentos</h2>
         <template x-for="project in projects" :key="project.id">
-          <div class="project">
+          <a target="_blank" :href="project.link" class="project" :title="project.name">
             <div x-html="project.svg"></div>
-            <p x-html="project.description" class="description"></p>
-          </div>
+            <p x-html="project.description" class="description" :title="project.description"></p>
+          </a>
         </template>
       </section>
-      <section class="videos">
+      <section class="videos" x-data="videos" aria-label="Vídeos-pesquisas da Blablalab">
         <h2 class="section-title">Vídeos-pesquisas</h2>
+        <template x-for="video in videos" :key="video.id">
+          <a target="_blank" :href="video.link" class="video" :title="video.title">
+            <h2 x-html="video.title" class="title" :title="video.title"></h2>
+            <p x-html="video.description" class="description" :title="video.description"></p>
+          </a>
+        </template>
       </section>
     </main>
-    <footer id="main-footer">
-      <section class="socials" x-data="socials">
+    <footer id="main-footer" role="contentinfo">
+      <section class="socials" x-data="socials" aria-label="Redes Sociais da Blablalab">
         <template x-for="social in socials" :key="social.id">
           <a class="social-link"
-              x-bind:target="social.target ? '_blank' : null"
+              :target="social.target ? '_blank' : null"
               x-html="social.icon"
               x-bind:href="social.link">
           </a>
@@ -73,7 +80,9 @@
                   <path d="M220.76 34.5098C220.76 31.2398 223.37 29.9198 226.42 29.2598C230.38 28.4098 231.63 28.2899 231.63 26.8999C231.63 25.6099 230.53 24.6401 228.83 24.6401C227.29 24.6401 225.97 25.4599 225.41 27.4399L221.29 26.0601C222.39 22.3801 225.59 21.0601 228.99 21.0601C233.33 21.0601 236.06 23.1998 236.06 27.2798V33.6299C236.06 36.4899 236.28 37.7101 236.63 39.1001H232.26C232.01 38.3501 231.91 37.6201 231.91 36.8101H231.85C230.94 38.5401 228.93 39.6401 226.63 39.6401C223.65 39.6401 220.75 37.98 220.75 34.52L220.76 34.5098ZM227.01 14.3101C227.76 14.3101 228.39 14.4701 229.34 15.0601L230.13 15.5898C230.41 15.7798 230.79 16 231.2 16C231.8 16 232.11 15.4 232.11 14.52H235.25C235.25 17.69 233.93 19.4502 231.57 19.4502C230.66 19.4502 230 19.1698 229.37 18.7598L228.49 18.1602C228.21 17.9402 227.7 17.6299 227.26 17.6299C226.47 17.6299 226.13 18.3199 226.13 19.1699H222.99C222.99 16.1899 224.72 14.2998 227.01 14.2998V14.3101ZM227.92 36.2402C230.25 36.2402 231.66 34.29 231.66 32.5V31.0898C230.75 31.4698 229.21 31.8801 228.24 32.0601C226.86 32.4101 225.57 33.0601 225.57 34.3901C225.57 35.7201 226.58 36.2402 227.93 36.2402H227.92Z" fill="#3BE15A"/>
                   <path d="M27.89 0.0698242C12.87 0.0698242 0.699951 12.2398 0.699951 27.2598C0.699951 42.2798 12.87 54.4502 27.89 54.4502C42.91 54.4502 55.08 42.2798 55.08 27.2598C55.08 12.2398 42.91 0.0698242 27.89 0.0698242ZM41.5699 29.6602L28.03 43.2002L16.4 31.5698L14.1799 29.3501C10.9699 26.1401 10.9699 20.9302 14.1799 17.7202C17.3899 14.5102 22.5899 14.5102 25.8099 17.7202L28.03 19.9399L30.4099 17.5601C32.2399 15.7301 34.9 14.9599 37.39 15.6499C44.44 17.6099 45.8299 25.3899 41.5699 29.6499V29.6602Z" fill="#3BE15A"/>
                 </svg>`,
-                description: `catalogo colaborativo dos nomes de fãs<br>(ou dos fandoms/fanbases)`
+                name:"Nome de Fã",
+                description: `catalogo colaborativo dos nomes de fãs<br>(ou dos fandoms/fanbases)`,
+                link: 'https://nomedefa.com/'
               },
               {
                 id:2,
@@ -88,7 +97,9 @@
                   <path d="M166.31 20.4702C166.31 13.6702 171.81 9.5 179.02 9.5C184.38 9.5 188.88 12.0899 190.62 16.1499L184.64 18.5098C183.68 16.1798 181.35 15.4102 178.99 15.4102C175.37 15.4102 172.93 17.5902 172.93 20.4302C172.93 23.6102 175.81 25.4902 179.25 25.4902C181.84 25.4902 184.09 24.6001 185.24 22.3901L191.22 24.75C189.48 28.81 184.94 31.3999 179.21 31.3999C171.93 31.3999 166.32 27.3002 166.32 20.4702H166.31Z" fill="#E5E5E5"/>
                   <path d="M192.24 25.0801C192.24 21.0201 195.93 19.7602 200.11 18.9902C204.03 18.2902 207.5 18.0999 207.5 16.3999C207.5 15.2899 206.02 14.48 203.73 14.48C201.62 14.48 199.74 15.1799 198.96 17.3599L192.98 15.4399C194.53 11.0099 199.15 9.49023 203.84 9.49023C210.3 9.49023 213.96 12.3302 213.96 16.9902V24.2998C213.96 27.6198 214.25 29.0998 214.74 30.7598H208.39C208.02 30.0598 207.95 29.3201 207.95 28.6201H207.84C206.55 30.3901 203.74 31.3901 200.71 31.3901C196.35 31.3901 192.25 29.3598 192.25 25.0698L192.24 25.0801ZM202.44 26.71C205.58 26.71 207.54 25.0502 207.54 23.1602V21.8301C205.91 22.2401 204.33 22.5699 202.7 22.8999C201.11 23.2299 199.23 23.7098 199.23 25.0098C199.23 26.1598 200.63 26.71 202.44 26.71Z" fill="#E5E5E5"/>
                   </svg>`,
-                  description: `uma lista comparativa com 100 marcas para mostrar como o brand equity<br> influencia no valor de um mesmo produto: camiseta branca`
+                  name:"Édemarca",
+                  description: `uma lista comparativa com 100 marcas para mostrar como o brand equity<br> influencia no valor de um mesmo produto: camiseta branca`,
+                  link: 'https://édemarca.com/'
               },
               {
                 id:3,
@@ -107,11 +118,54 @@
                   <path d="M8.88999 59.8198C9.08999 60.1698 9.46997 60.3901 9.86997 60.3901H15.94C16.35 60.3901 16.72 60.1698 16.92 59.8198L19.96 54.5601C20.16 54.2101 20.16 53.7799 19.96 53.4199L16.92 48.1602C16.72 47.8102 16.34 47.5898 15.94 47.5898H9.86997C9.45997 47.5898 9.08999 47.8102 8.88999 48.1602L5.84995 53.4199C5.64995 53.7699 5.64995 54.2001 5.84995 54.5601L8.88999 59.8198Z" fill="#FF34FF"/>
                   <path d="M33.3101 40.7202L14.0202 40.6299C13.1802 40.6299 12.6701 39.7102 13.1001 38.9902L29.8402 11.52L45.0902 20.3198L33.3101 40.7202Z" fill="#FF34FF"/>
                 </svg>`,
-                description: `quiz para exaltar a diversidade linguística do Brasil - <br> utilizando um audio de um repesentante de cada estado`
-              }
+                name:"Sotaquiz",
+                description: `quiz para exaltar a diversidade linguística do Brasil - <br> utilizando um audio de um repesentante de cada estado`,
+                link: 'https://sotaquiz.com/'
+              },
             ]
           }));
 
+          Alpine.data('videos', () => ({
+            videos: [
+              {
+                id:1,
+                title: 'Fonética Perceptiva',
+                description:'Muxoxo, Tsc Tsc, Audição, Onomatopeia, Interjeição',
+                link: 'https://www.instagram.com/p/C72TBKpPdhI/'
+              },
+              {
+                id:2,
+                title: 'Product Placement',
+                description:'Filmes/Séries, Publicidade, Entreterimento',
+                link: 'https://www.instagram.com/p/C5orWDQPhg1/'
+              },
+              {
+                id:3,
+                title: 'Criatividade',
+                description:'Testes, Pensamento Criativo, Psicologia',
+                link:'https://www.instagram.com/p/CxL5DbSP3Za/'
+              },
+              {
+                id:4,
+                title: 'Interação Humano-Computador',
+                description:'Antropomorfismo, Vale da Estranheza, Robô-friendly',
+                link:'https://www.instagram.com/p/CwoNKveLwB9/'
+              },
+              {
+                id:5,
+                title: 'Cromofobia',
+                description:'Embranquecimento, Minimalismo, Maximalismo',
+                link:'https://www.instagram.com/p/CwXrDzaOk_7/'
+              },
+              {
+                id:6,
+                title: 'Ilusão Temporal',
+                description:'Educação Cronológica, Monocronismo, Policronismo',
+                link:'https://www.instagram.com/p/CwDAo-UtXqQ/'
+              },
+            ]
+          }));
+          
           Alpine.data('socials', () => ({
             socials: [
             {
