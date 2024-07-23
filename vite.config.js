@@ -4,7 +4,7 @@ export default defineConfig({
   build: {
     outDir: 'dist', // output directory
   },
-  base: 'https://github.com/devblablalab/blablalab',
+  base: '/blablalab',
   publicDir: 'public',
   plugins: [],
 });
