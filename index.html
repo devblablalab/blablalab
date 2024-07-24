@@ -6,26 +6,27 @@
     <title>Blablalab</title>
     <meta name="description" content="Blablalab, sua dose de comunicologia">
     <link rel="preload" href="/font/area-normal-regular.otf" as="font" crossorigin="anonymous" />
-    <link rel="preload" href="/font/area-normal-semibold.otf" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/font/area-normal-semibold.otf" as="font" crossorigin>
+    <link rel="preload" href="/font/area-normal-bold.otf" as="font" crossorigin>
   </head>
   <body>
     <header x-data="header" id="main-header" role="banner">
       <div class="container">
-        <a x-html="brand" href="/" id="brand" aria-label="Brand do Site"></a>
+        <a x-html="brand" target="_blank" href="https://www.instagram.com/blablalab.wtf/" id="brand" aria-label="Brand do Site"></a>
         <button @click="showInfo = true" id="learn-more">?</button>
       </div>
       <template x-if="showInfo">
         <div id="banner-info" x-transition>
           <header>
             <div class="container">
-              <div x-html="brand" id="brand-info" aria-label="Brand do Site"></div>
+              <a x-html="brand" target="_blank" href="https://www.instagram.com/blablalab.wtf/" id="brand-info" aria-label="Brand do Site"></a>
               <button @click="showInfo = false" x-html="closeBanner" class="close-banner"></button>
             </div>
           </header>
           <section class="content">
-            <h2>Somos um Laboratório focado no avanço da Comunicologia</h2>
+            <h2>Somos um Laboratório <br> focado no avanço da Comunicologia</h2>
             <div class="paragraphs">
-              <p>"O estudo da comunicação. Várias áreas tem um "logia" no final, o que certifica ela como ciência.</p>
+              <p>*O estudo da comunicação. Várias áreas tem um "logia" no final, o que certifica ela como ciência.</p>
               <p>Por que a comunicação não usa? Vilém Flusser já defendia esse termo desde 1980!</p>
             </div>
             <div class="bottom-text">
@@ -113,7 +114,7 @@
                   <path d="M27.89 0.0698242C12.87 0.0698242 0.699951 12.2398 0.699951 27.2598C0.699951 42.2798 12.87 54.4502 27.89 54.4502C42.91 54.4502 55.08 42.2798 55.08 27.2598C55.08 12.2398 42.91 0.0698242 27.89 0.0698242ZM41.5699 29.6602L28.03 43.2002L16.4 31.5698L14.1799 29.3501C10.9699 26.1401 10.9699 20.9302 14.1799 17.7202C17.3899 14.5102 22.5899 14.5102 25.8099 17.7202L28.03 19.9399L30.4099 17.5601C32.2399 15.7301 34.9 14.9599 37.39 15.6499C44.44 17.6099 45.8299 25.3899 41.5699 29.6499V29.6602Z" fill="#3BE15A"/>
                 </svg>`,
                 name:"Nome de Fã",
-                description: `catalogo colaborativo dos nomes de fãs<br>(ou dos fandoms/fanbases)`,
+                description: `catálogo colaborativo dos nomes de fãs<br>(ou dos fandoms/fanbases)`,
                 link: 'https://nomedefa.com/'
               },
               {
@@ -151,7 +152,7 @@
                   <path d="M33.3101 40.7202L14.0202 40.6299C13.1802 40.6299 12.6701 39.7102 13.1001 38.9902L29.8402 11.52L45.0902 20.3198L33.3101 40.7202Z" fill="#FF34FF"/>
                 </svg>`,
                 name:"Sotaquiz",
-                description: `quiz para exaltar a diversidade linguística do Brasil - <br> utilizando um audio de um repesentante de cada estado`,
+                description: `quiz para exaltar a diversidade linguística do Brasil - <br> utilizando um áudio de um repesentante de cada estado`,
                 link: 'https://sotaquiz.com/'
               },
             ]
@@ -221,17 +222,17 @@
                 `,
               link: 'https://www.tiktok.com/@blablalab_'
             },
-            {
-              id: 3,
-              target:false,
-              icon: `
-              <svg viewBox="0 0 58 41" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M49.4199 40.52H8.83984C4.16984 40.52 0.369873 36.72 0.369873 32.05V8.78003C0.369873 6.52003 1.24985 4.39004 2.84985 2.79004C4.44985 1.19004 6.56984 0.310059 8.83984 0.310059H49.4199C54.0899 0.310059 57.8899 4.11003 57.8899 8.78003V32.05C57.8899 36.72 54.0899 40.52 49.4199 40.52ZM8.83984 4.32007C7.64984 4.32007 6.52993 4.77988 5.67993 5.62988C4.83993 6.46988 4.36987 7.59004 4.36987 8.79004V32.0601C4.36987 34.5201 6.36984 36.53 8.83984 36.53H49.4199C51.8799 36.53 53.8899 34.5301 53.8899 32.0601V8.79004C53.8899 6.33004 51.8899 4.32007 49.4199 4.32007H8.83984Z" fill="white"/>
-                <path d="M28.0699 22.77L4.29004 7.26001L6.46997 3.90991L28.1899 18.0701L52.55 3.83008L54.5699 7.28003L28.0699 22.77Z" fill="white"/>
-              </svg>
-              `,
-              link: 'mailto:devblablalab@gmail.com'
-            },
+            // {
+            //   id: 3,
+            //   target:false,
+            //   icon: `
+            //   <svg viewBox="0 0 58 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+            //     <path d="M49.4199 40.52H8.83984C4.16984 40.52 0.369873 36.72 0.369873 32.05V8.78003C0.369873 6.52003 1.24985 4.39004 2.84985 2.79004C4.44985 1.19004 6.56984 0.310059 8.83984 0.310059H49.4199C54.0899 0.310059 57.8899 4.11003 57.8899 8.78003V32.05C57.8899 36.72 54.0899 40.52 49.4199 40.52ZM8.83984 4.32007C7.64984 4.32007 6.52993 4.77988 5.67993 5.62988C4.83993 6.46988 4.36987 7.59004 4.36987 8.79004V32.0601C4.36987 34.5201 6.36984 36.53 8.83984 36.53H49.4199C51.8799 36.53 53.8899 34.5301 53.8899 32.0601V8.79004C53.8899 6.33004 51.8899 4.32007 49.4199 4.32007H8.83984Z" fill="white"/>
+            //     <path d="M28.0699 22.77L4.29004 7.26001L6.46997 3.90991L28.1899 18.0701L52.55 3.83008L54.5699 7.28003L28.0699 22.77Z" fill="white"/>
+            //   </svg>
+            //   `,
+            //   link: ''
+            // },
           ]
           }));
       })

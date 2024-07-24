@@ -6,7 +6,19 @@
 @font-face {
   font-family: 'Area Normal';
   src: url('/font/area-normal-regular.otf');
-  src: url('/font/area-normal-semibold.otf')
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Area Normal';
+  src: url('/font/area-normal-semibold.otf');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Area Normal';
+  src: url('/font/area-normal-bold.otf');
+  font-weight: bold;
 }
 
 :root {
