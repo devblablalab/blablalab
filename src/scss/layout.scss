@@ -198,6 +198,12 @@
                 width: 25px;
                 height: 25px;
                 color: $light;
+                fill: $light;
+            }
+
+            svg.large {
+                width: 35px;
+                height: 35px;
             }
         }
     }

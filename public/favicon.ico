@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 115.89 115.89">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke: url(#Gradiente_sem_nome_47-3);
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        fill: none;
+        stroke-miterlimit: 10;
+        stroke-width: 6px;
+      }
+
+      .cls-2 {
+        stroke: url(#Gradiente_sem_nome_47-2);
+      }
+
+      .cls-3 {
+        stroke: url(#Gradiente_sem_nome_47-4);
+      }
+
+      .cls-4 {
+        stroke: url(#Gradiente_sem_nome_47);
+      }
+    </style>
+    <linearGradient id="Gradiente_sem_nome_47" data-name="Gradiente sem nome 47" x1="44.96" y1="65.44" x2="70.93" y2="50.45" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffb815"/>
+      <stop offset=".61" stop-color="#ff2aa7"/>
+      <stop offset="1" stop-color="#c100e9"/>
+    </linearGradient>
+    <linearGradient id="Gradiente_sem_nome_47-2" data-name="Gradiente sem nome 47" x1="33.22" y1="72.22" x2="82.67" y2="43.67" xlink:href="#Gradiente_sem_nome_47"/>
+    <linearGradient id="Gradiente_sem_nome_47-3" data-name="Gradiente sem nome 47" x1="21.88" y1="78.77" x2="94.01" y2="37.12" xlink:href="#Gradiente_sem_nome_47"/>
+    <linearGradient id="Gradiente_sem_nome_47-4" data-name="Gradiente sem nome 47" x1="10.58" y1="85.29" x2="105.31" y2="30.6" xlink:href="#Gradiente_sem_nome_47"/>
+  </defs>
+  <!-- Generator: Adobe Illustrator 28.6.0, SVG Export Plug-In . SVG Version: 1.2.0 Build 709)  -->
+  <g>
+    <g id="Camada_1">
+      <circle class="cls-4" cx="57.94" cy="57.94" r="12"/>
+      <circle class="cls-2" cx="57.94" cy="57.94" r="25.55"/>
+      <circle class="cls-1" cx="57.94" cy="57.94" r="38.64"/>
+      <circle class="cls-3" cx="57.94" cy="57.94" r="51.69"/>
+    </g>
+  </g>
+</svg>
