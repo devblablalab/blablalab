@@ -5,78 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blablalab</title>
     <meta name="description" content="Blablalab, sua dose de comunicologia">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="preload" href="/font/area-normal-regular.otf" as="font" crossorigin="anonymous" />
     <link rel="preload" href="/font/area-normal-semibold.otf" as="font" crossorigin>
     <link rel="preload" href="/font/area-normal-bold.otf" as="font" crossorigin>
   </head>
-  <body>
-    <header x-data="header" id="main-header" role="banner">
-      <div class="container">
-        <a x-html="brand" target="_blank" href="https://www.instagram.com/blablalab.wtf/" id="brand" aria-label="Brand do Site" title="Logo Blablalab"></a>
-        <button @click="showInfo = true" id="learn-more" title="Saiba mais Blablalab">?</button>
+  <body x-data="blablalab"> 
+    <template x-if="showInfo">
+      <div id="banner-info" :class="{ 'active': showInfo }" x-transition>
+        <header>
+          <div class="container">
+            <a x-html="brand" target="_blank" href="https://www.instagram.com/blablalab.wtf/" id="brand-info" aria-label="Brand do Site" title="Logo Blablalab"></a>
+            <button @click="showInfo = false" x-html="closeBanner" class="close-banner"></button>
+          </div>
+        </header>
+        <section class="content">
+          <h2>Somos um Laboratório <br> focado no avanço da Comunicologia</h2>
+          <div class="paragraphs">
+            <p>*O estudo da comunicação. Várias áreas tem um "logia" no final, o que certifica ela como ciência.</p>
+            <p>Por que a comunicação não usa? Vilém Flusser já defendia esse termo desde 1980!</p>
+          </div>
+          <div class="bottom-text">
+            <h3>Queremos que você reflita e aprenda mais sobre comunicação.</h3>
+            <h3>Nosso foco é fazer Ciência Popular de forma Open-source.</h3>
+          </div>
+        </section>
+        <footer>
+          <p>bora conversar ;)</p>
+        </footer>
       </div>
-      <template x-if="showInfo">
-        <div id="banner-info" x-transition>
-          <header>
-            <div class="container">
-              <a x-html="brand" target="_blank" href="https://www.instagram.com/blablalab.wtf/" id="brand-info" aria-label="Brand do Site" title="Logo Blablalab"></a>
-              <button @click="showInfo = false" x-html="closeBanner" class="close-banner"></button>
-            </div>
-          </header>
-          <section class="content">
-            <h2>Somos um Laboratório <br> focado no avanço da Comunicologia</h2>
-            <div class="paragraphs">
-              <p>*O estudo da comunicação. Várias áreas tem um "logia" no final, o que certifica ela como ciência.</p>
-              <p>Por que a comunicação não usa? Vilém Flusser já defendia esse termo desde 1980!</p>
-            </div>
-            <div class="bottom-text">
-              <h3>Queremos que você reflita e aprenda mais sobre comunicação.</h3>
-              <h3>Nosso foco é fazer Ciência Popular de forma Open-source.</h3>
-            </div>
-          </section>
-          <footer>
-            <p>bora conversar ;)</p>
-          </footer>
-        </div>
+    </template>
+    <div class="wrapper" :class="{ 'banner': showInfo }">
+      <template x-if="!showInfo">
+        <header id="main-header" role="banner">
+          <div class="container">
+            <a x-html="brand" target="_blank" href="https://www.instagram.com/blablalab.wtf/" id="brand" aria-label="Brand do Site" title="Logo Blablalab"></a>
+            <button @click="showInfo = true" id="learn-more" title="Saiba mais Blablalab">?</button>
+          </div>
+        </header>
       </template>
-    </header>
-    <main id="main-content" role="main">
-      <section class="projects" x-data="projects" aria-label="Projetos da Blablalab">
-        <h2 class="section-title">Últimos experimentos</h2>
-        <template x-for="project in projects" :key="project.id">
-          <a target="_blank" :href="project.link" class="project" :title="project.name">
-            <div x-html="project.svg"></div>
-            <p x-html="project.description" class="description format-attribute" :title="project.description"></p>
-          </a>
-        </template>
-      </section>
-      <section class="videos" x-data="videos" aria-label="Vídeos-pesquisas da Blablalab">
-        <h2 class="section-title">Vídeos-pesquisas</h2>
-        <template x-for="video in videos" :key="video.id">
-          <a target="_blank" :href="video.link" class="video" :title="video.title">
-            <h2 x-html="video.title" class="title" :title="video.title"></h2>
-            <p x-html="video.description" class="description format-attribute" :title="video.description"></p>
-          </a>
-        </template>
-      </section>
-    </main>
-    <footer id="main-footer" role="contentinfo">
-      <section class="socials" x-data="socials" aria-label="Redes Sociais da Blablalab">
-        <template x-for="social in socials" :key="social.id">
-          <a class="social-link"
-              :target="social.target ? '_blank' : null"
-              :title="social.title"
-              x-html="social.icon"
-              x-bind:href="social.link">
-          </a>
-        </template>
-      </section>
-    </footer>
+      <main id="main-content" role="main">
+        <section class="projects" x-data="projects" aria-label="Projetos da Blablalab">
+          <h2 class="section-title">Últimos experimentos</h2>
+          <template x-for="project in projects" :key="project.id">
+            <a target="_blank" :href="project.link" class="project" :title="project.name">
+              <div x-html="project.svg"></div>
+              <p x-html="project.description" class="description format-attribute" :title="project.description"></p>
+            </a>
+          </template>
+        </section>
+        <section class="videos" x-data="videos" aria-label="Vídeos-pesquisas da Blablalab">
+          <h2 class="section-title">Vídeos-pesquisas</h2>
+          <template x-for="video in videos" :key="video.id">
+            <a target="_blank" :href="video.link" class="video" :title="video.title">
+              <h2 x-html="video.title" class="title" :title="video.title"></h2>
+              <p x-html="video.description" class="description format-attribute" :title="video.description"></p>
+            </a>
+          </template>
+        </section>
+      </main>
+      <footer id="main-footer" role="contentinfo">
+        <section class="socials" x-data="socials" aria-label="Redes Sociais da Blablalab">
+          <template x-for="social in socials" :key="social.id">
+            <a class="social-link"
+                :target="social.target ? '_blank' : null"
+                :title="social.title"
+                x-html="social.icon"
+                x-bind:href="social.link">
+            </a>
+          </template>
+        </section>
+      </footer>
+    </div>
     <script type="module" src="/main.js"></script>
     <script>
       document.addEventListener('alpine:init', () => {
-          Alpine.data('header', () => ({
+          Alpine.data('blablalab', () => ({
             brand: `
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 298 49" fill="none">
               <path d="M276.52 2.39993V0.169922H284.96V2.39993H281.94V10.7699H279.53V2.39993H276.51H276.52Z" fill="white"/>
@@ -91,12 +95,12 @@
               <path d="M211.25 42.27V34.33L217.24 28.4H234.54V23.42L232.05 20.93H221.48L218.99 23.42V25.57H211.52V21.67L218.39 14.73H235.16L242.03 21.67V48.27H235.09V43.09L229.7 48.27H217.24L211.25 42.28V42.27ZM228.96 42.27L234.55 36.88V34.05H220.88L218.73 36.14V40.25L220.75 42.27H228.96Z" fill="white"/>
               <path d="M247.64 41.3299V0.189941H255.25V19.9799L260.7 14.7299H272.75L279.48 21.4599V41.5199L272.75 48.2499H254.5L247.63 41.3099L247.64 41.3299ZM269.06 41.7399L271.89 38.9099V24.0999L269.06 21.2699H261.92L255.25 27.9399V38.9099L258.08 41.7399H269.06Z" fill="white"/>
             </svg>`,
+            showInfo: false,
             closeBanner: `
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path opacity="0.4" d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" fill="none"></path>
               <path d="M13.0594 12.0001L15.3594 9.70011C15.6494 9.41011 15.6494 8.93011 15.3594 8.64011C15.0694 8.35011 14.5894 8.35011 14.2994 8.64011L11.9994 10.9401L9.69937 8.64011C9.40937 8.35011 8.92937 8.35011 8.63938 8.64011C8.34938 8.93011 8.34938 9.41011 8.63938 9.70011L10.9394 12.0001L8.63938 14.3001C8.34938 14.5901 8.34938 15.0701 8.63938 15.3601C8.78938 15.5101 8.97937 15.5801 9.16937 15.5801C9.35937 15.5801 9.54937 15.5101 9.69937 15.3601L11.9994 13.0601L14.2994 15.3601C14.4494 15.5101 14.6394 15.5801 14.8294 15.5801C15.0194 15.5801 15.2094 15.5101 15.3594 15.3601C15.6494 15.0701 15.6494 14.5901 15.3594 14.3001L13.0594 12.0001Z" fill="#ffff"></path>
             </svg>`,
-            showInfo: false,
           }));
 
           Alpine.data('projects', () => ({

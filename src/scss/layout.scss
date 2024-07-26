@@ -1,209 +1,219 @@
-#main-header {
-    @include header-space;
 
-    .container {
-        @include flex-between;
-    }
+#banner-info {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    background: $light;
+    height: $banner-height;
+    width: 100%;
+    transition: all .2s ease-in-out;
+    text-align: center;
+    font-weight: 600;
 
-    #brand, #brand-info {
-        @include flex-center;
-        @include svg-default;
-    }
+    header {
+        @include header-space;
 
-    #brand {
-        path {
-            fill: $light
-        }
-    }
+        .container {
+            @include flex-between;
 
-    #learn-more {
-        @include flex-center;
-        background-color: $gray;
-        color: $light;
-        padding: 4px 12px;
-        font-size: 28px;
-        font-weight: 700;
-        max-height: 45px;
-        border-radius: 5px;
-        border:none;
-        cursor: pointer;
-        transition: all .2s;
-
-        &:hover {
-            background: $light;
-            color: $gray;
-        }
-
-        @include small-screen {
-            font-size: 24px;
-        }
-    }
-
-    #banner-info {
-        position: fixed;
-        z-index: 999;
-        top: 0;
-        left: 0;
-        background: $light;
-        min-height: 50vh;
-        width: 100%;
-        transition: all .2s ease-in-out;
-        text-align: center;
-        font-weight: 600;
-
-        header {
-            @include header-space;
-
-            .container {
-                @include flex-between;
-
-                #brand-info {
-                    path {
-                        fill: $dark!important;
-                    }
-                }
-
-                .close-banner {
-                    cursor: pointer;
-                    background: none;
-                    border: none;
-                    transition: all .2s;
-
-                    svg {
-                        width: 45px;
-                        height: 45px;
-                        transform: scale(1.5);
-
-                        &:hover path {
-                            fill: $dark;
-                        }
-
-                        path:nth-child(2) {
-                            fill: $dark;
-                        } 
-                    }
-                }
-            }
-        }
-
-        .content {
-            @include flex-center;
-            flex-direction: column;
-            padding: 0 25px;
-
-            h2 {
-                font-size: var(--fs-600);
-                line-height: 1.2;
-
-                padding: 25px 0;
-            }
-
-            .paragraphs {
-                padding-bottom: 30px;
-                p {
-                    font-size: 14px;
-                    padding: 4px 0;
-                }
-            }
-
-            .bottom-text {
-                padding: 40px 0;
-
-                h3 {
-                    font-size: var(--fs-100);
-                    font-weight: 600;
-                }
-            }
-        }
-
-        footer {
-            padding: {
-                top: 10px;
-                bottom: 20px;
-            }
-        }
-    }
-}
-
-#main-content {
-    padding: 40px 0;
-    .projects {
-        h2 {
-            @include dotted-line;
-        }
-
-        .project {
-            @include flex-center;
-            flex-direction: column;
-            gap: 15px;
-            padding: 40px 10px;
-            transition: opacity .2s;
-            @include dotted-line;
-
-            svg {
+            #brand-info {
+                @include flex-center;
                 @include svg-default;
+
+                path {
+                    fill: $dark!important;
+                }
             }
 
-            .description {
-                text-align: center;
+            .close-banner {
+                cursor: pointer;
+                background: none;
+                border: none;
+                transition: all .2s;
+
+                svg {
+                    width: 45px;
+                    height: 45px;
+                    transform: scale(1.5);
+
+                    &:hover path {
+                        fill: $dark;
+                    }
+
+                    path:nth-child(2) {
+                        fill: $dark;
+                    } 
+                }
             }
         }
     }
 
-    .videos {
-        padding: 20px 0;
+    .content {
         @include flex-center;
         flex-direction: column;
-        gap: 25px;
+        padding: 0 25px;
 
-        .video {
-            text-align: center;
+        h2 {
+            font-size: var(--fs-600);
+            line-height: 1.2;
 
-            .title {
-                font-size: var(--fs-200);
-                color: $light;
-                text-transform: capitalize;
-                padding: 10px 0;
+            padding: 25px 0;
+        }
+
+        .paragraphs {
+            padding-bottom: 30px;
+            p {
+                font-size: 14px;
+                padding: 4px 0;
+            }
+        }
+
+        .bottom-text {
+            padding: 40px 0;
+
+            h3 {
+                font-size: var(--fs-100);
+                font-weight: 600;
             }
         }
     }
 
-    .videos .video,
-    .projects .project {
-        &:hover {
-            opacity: .6;
+    footer {
+        padding: {
+            top: 10px;
+            bottom: 20px;
         }
     }
 }
 
-#main-footer {
-    padding: {
-        top: 20px;
-        bottom: 40px;
+.wrapper {
+    &.banner {
+        margin-top: $banner-height;
     }
-    @include flex-center;
 
-    .socials {
-        @include flex-row-y-center;
-        gap: 25px;
-
-        .social-link {
-            transition: opacity .2s;
-
+    #main-header {
+        @include header-space;
+    
+        .container {
+            @include flex-between;
+        }
+    
+        #brand {
+            @include flex-center;
+            @include svg-default;
+        }
+    
+        #brand {
+            path {
+                fill: $light
+            }
+        }
+    
+        #learn-more {
+            @include flex-center;
+            background-color: $gray;
+            color: $light;
+            padding: 4px 12px;
+            font-size: 28px;
+            font-weight: 700;
+            max-height: 45px;
+            border-radius: 5px;
+            border:none;
+            cursor: pointer;
+            transition: all .2s;
+    
+            &:hover {
+                background: $light;
+                color: $gray;
+            }
+    
+            @include small-screen {
+                font-size: 24px;
+            }
+        }
+    }
+    
+    #main-content {
+        padding: 40px 0;
+        .projects {
+            h2 {
+                @include dotted-line;
+            }
+    
+            .project {
+                @include flex-center;
+                flex-direction: column;
+                gap: 15px;
+                padding: 40px 10px;
+                transition: opacity .2s;
+                @include dotted-line;
+    
+                svg {
+                    @include svg-default;
+                }
+    
+                .description {
+                    text-align: center;
+                }
+            }
+        }
+    
+        .videos {
+            padding: 20px 0;
+            @include flex-center;
+            flex-direction: column;
+            gap: 25px;
+    
+            .video {
+                text-align: center;
+    
+                .title {
+                    font-size: var(--fs-200);
+                    color: $light;
+                    text-transform: capitalize;
+                    padding: 10px 0;
+                }
+            }
+        }
+    
+        .videos .video,
+        .projects .project {
             &:hover {
                 opacity: .6;
             }
-
-            svg {
-                width: 25px;
-                height: 25px;
-                color: $light;
-                fill: $light;
-            }
-
-            svg.large {
-                width: 35px;
-                height: 35px;
+        }
+    }
+    
+    #main-footer {
+        padding: {
+            top: 20px;
+            bottom: 40px;
+        }
+        @include flex-center;
+    
+        .socials {
+            @include flex-row-y-center;
+            gap: 25px;
+    
+            .social-link {
+                transition: opacity .2s;
+    
+                &:hover {
+                    opacity: .6;
+                }
+    
+                svg {
+                    width: 25px;
+                    height: 25px;
+                    color: $light;
+                    fill: $light;
+                }
+    
+                svg.large {
+                    width: 35px;
+                    height: 35px;
+                }
             }
         }
     }
