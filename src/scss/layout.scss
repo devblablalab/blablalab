@@ -5,7 +5,7 @@
     top: 0;
     left: 0;
     background: $light;
-    height: $banner-height;
+    min-height: 50vh;
     width: 100%;
     transition: all .2s ease-in-out;
     text-align: center;
@@ -88,10 +88,6 @@
 }
 
 .wrapper {
-    &.banner {
-        margin-top: $banner-height;
-    }
-
     #main-header {
         @include header-space;
     

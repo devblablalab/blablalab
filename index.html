@@ -12,7 +12,7 @@
   </head>
   <body x-data="blablalab"> 
     <template x-if="showInfo">
-      <div id="banner-info" :class="{ 'active': showInfo }" x-transition>
+      <div x-ref="banner" id="banner-info" :class="{ 'active': showInfo }" x-transition>
         <header>
           <div class="container">
             <a x-html="brand" target="_blank" href="https://www.instagram.com/blablalab.wtf/" id="brand-info" aria-label="Brand do Site" title="Logo Blablalab"></a>
@@ -35,7 +35,7 @@
         </footer>
       </div>
     </template>
-    <div class="wrapper" :class="{ 'banner': showInfo }">
+    <div class="wrapper" :style="showInfo ? `margin-top: ${$refs.banner.offsetHeight}px` : ''">
       <template x-if="!showInfo">
         <header id="main-header" role="banner">
           <div class="container">
