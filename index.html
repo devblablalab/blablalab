@@ -11,41 +11,37 @@
     <link rel="preload" href="/font/area-normal-bold.otf" as="font" crossorigin>
   </head>
   <body x-data="blablalab"> 
-    <template x-if="showInfo">
-      <div x-ref="banner" id="banner-info" :class="{ 'active': showInfo }" x-transition>
-        <header>
-          <div class="container">
-            <a x-html="brand" target="_blank" href="https://www.instagram.com/blablalab.wtf/" id="brand-info" aria-label="Brand do Site" title="Logo Blablalab"></a>
-            <button @click="showInfo = false" x-html="closeBanner" class="close-banner"></button>
-          </div>
-        </header>
-        <section class="content">
-          <h2>Somos um Laboratório <br> focado no avanço da Comunicologia</h2>
-          <div class="paragraphs">
-            <p>
-              *O estudo da comunicação. Várias áreas tem um "logia" no final, o que certifica ela como ciência.
-              Por que a comunicação não usa? Vilém Flusser já defendia esse termo desde 1980!
-            </p>
-          </div>
-          <div class="bottom-text">
-            <h3>Queremos que você reflita e aprenda mais sobre comunicação.</h3>
-            <h3>Nosso foco é fazer Ciência Popular de forma Open-source.</h3>
-          </div>
-        </section>
-        <footer>
-          <p>bora conversar ;)</p>
-        </footer>
-      </div>
-    </template>
+    <div x-show="showInfo" x-ref="banner" id="banner-info" :class="{ 'active': showInfo }" x-transition:enter.duration.300ms>
+      <header>
+        <div class="container">
+          <a x-html="brand" target="_blank" href="https://www.instagram.com/blablalab.wtf/" id="brand-info" aria-label="Brand do Site" title="Logo Blablalab"></a>
+          <button @click="showInfo = false" x-html="closeBanner" class="close-banner"></button>
+        </div>
+      </header>
+      <section class="content">
+        <h2>Somos um Laboratório <br> focado no avanço da Comunicologia</h2>
+        <div class="paragraphs">
+          <p>
+            *O estudo da comunicação. Várias áreas tem um "logia" no final, o que certifica ela como ciência.
+            Por que a comunicação não usa? Vilém Flusser já defendia esse termo desde 1980!
+          </p>
+        </div>
+        <div class="bottom-text">
+          <h3>Queremos que você reflita e aprenda mais sobre comunicação.</h3>
+          <h3>Nosso foco é fazer Ciência Popular de forma Open-source.</h3>
+        </div>
+      </section>
+      <footer>
+        <p>bora conversar ;)</p>
+      </footer>
+    </div>
     <div class="wrapper" :style="showInfo ? `margin-top: ${$refs.banner.offsetHeight}px` : ''">
-      <template x-if="!showInfo">
-        <header id="main-header" role="banner" x-transition:enter.duration.500ms>
-          <div class="container">
-            <a x-html="brand" target="_blank" href="https://www.instagram.com/blablalab.wtf/" id="brand" aria-label="Brand do Site" title="Logo Blablalab"></a>
-            <button @click="showInfo = true" id="learn-more" title="Saiba mais Blablalab">?</button>
-          </div>
-        </header>
-      </template>
+      <header x-show="!showInfo" id="main-header" role="banner" x-transition:enter.duration.300ms>
+        <div class="container">
+          <a x-html="brand" target="_blank" href="https://www.instagram.com/blablalab.wtf/" id="brand" aria-label="Brand do Site" title="Logo Blablalab"></a>
+          <button @click="showInfo = true" id="learn-more" title="Saiba mais Blablalab">?</button>
+        </div>
+      </header>
       <main id="main-content" role="main">
         <section class="projects" x-data="projects" aria-label="Projetos da Blablalab">
           <h2 class="section-title">Últimos experimentos</h2>
