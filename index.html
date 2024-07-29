@@ -22,8 +22,10 @@
         <section class="content">
           <h2>Somos um Laboratório <br> focado no avanço da Comunicologia</h2>
           <div class="paragraphs">
-            <p>*O estudo da comunicação. Várias áreas tem um "logia" no final, o que certifica ela como ciência.</p>
-            <p>Por que a comunicação não usa? Vilém Flusser já defendia esse termo desde 1980!</p>
+            <p>
+              *O estudo da comunicação. Várias áreas tem um "logia" no final, o que certifica ela como ciência.
+              Por que a comunicação não usa? Vilém Flusser já defendia esse termo desde 1980!
+            </p>
           </div>
           <div class="bottom-text">
             <h3>Queremos que você reflita e aprenda mais sobre comunicação.</h3>
@@ -37,7 +39,7 @@
     </template>
     <div class="wrapper" :style="showInfo ? `margin-top: ${$refs.banner.offsetHeight}px` : ''">
       <template x-if="!showInfo">
-        <header id="main-header" role="banner">
+        <header id="main-header" role="banner" x-transition:enter.duration.500ms>
           <div class="container">
             <a x-html="brand" target="_blank" href="https://www.instagram.com/blablalab.wtf/" id="brand" aria-label="Brand do Site" title="Logo Blablalab"></a>
             <button @click="showInfo = true" id="learn-more" title="Saiba mais Blablalab">?</button>
