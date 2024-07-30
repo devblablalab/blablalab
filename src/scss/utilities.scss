@@ -1,3 +1,39 @@
+@mixin small-screen {
+    @media (max-width: $small-screen) {
+      @content;
+    }
+}
+  
+@mixin medium-screen {
+    @media (max-width: $medium-screen) {
+        @content;
+    }
+}
+  
+@mixin large-screen {
+    @media (max-width: $large-screen) {
+      @content;
+    }
+}
+
+@mixin small-screen-height {
+    @media (max-height: $small-screen-height) {
+        @content;
+      }
+}
+
+@mixin medium-screen-height {
+    @media (max-height: $medium-screen-height) {
+        @content;
+      }
+}
+
+@mixin large-screen-height {
+    @media (max-height: $large-screen-height) {
+        @content;
+      }
+}
+
 @mixin flex-center {
     display: flex;
     justify-content: center;
@@ -26,6 +62,10 @@
 
 @mixin header-space {
     padding: 30px 20px;
+
+    @include small-screen-height {
+        padding: 25px 20px;
+    }
 }
 
 @mixin svg-default {
@@ -35,24 +75,6 @@
     @include small-screen {
         width: 135px;
         height: 40px;
-    }
-}
-
-@mixin small-screen {
-    @media (max-width: $small-screen) {
-      @content;
-    }
-}
-  
-@mixin medium-screen {
-    @media (max-width: $medium-screen) {
-        @content;
-    }
-}
-  
-@mixin large-screen {
-    @media (max-width: $large-screen) {
-      @content;
     }
 }
 

@@ -10,6 +10,10 @@
     text-align: center;
     font-weight: 600;
 
+    @include large-screen-height {
+        min-height: 35vh;
+    }
+
     header {
         @include header-space;
 
@@ -56,21 +60,35 @@
         h2 {
             font-size: var(--fs-600);
             line-height: 1.2;
-
             padding: 25px 0;
+
+            @include small-screen-height {
+                font-size: 20px;
+                padding: 15px 0;
+            }
         }
 
         .paragraphs {
-            padding-bottom: 30px;
+            padding-bottom: 10px;
             max-width: 680px;
+
             p {
                 font-size: 14px;
                 padding: 4px 0;
+
+                @include small-screen-height {
+                    padding-bottom: 5px;
+                    font-size: 12px;
+                }
             }
         }
 
         .bottom-text {
             padding: 40px 0;
+
+            @include small-screen-height {
+                padding: 20px 0;
+            }
 
             h3 {
                 font-size: var(--fs-100);
