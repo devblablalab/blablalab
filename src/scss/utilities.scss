@@ -81,7 +81,7 @@
 @mixin paragraph-banner {
     p {
         font-size: 14px;
-        padding: 4px 0;
+        padding: 10px 0;
 
         @include small-screen-height {
             padding-bottom: 5px;
