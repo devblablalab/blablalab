@@ -31,7 +31,7 @@
 @mixin large-screen-height {
     @media (max-height: $large-screen-height) {
         @content;
-      }
+    }
 }
 
 @mixin flex-center {
@@ -78,6 +78,18 @@
     }
 }
 
+@mixin paragraph-banner {
+    p {
+        font-size: 14px;
+        padding: 4px 0;
+
+        @include small-screen-height {
+            padding-bottom: 5px;
+            font-size: 12px;
+        }
+    }
+}
+
 .container {
     max-width: 1180px;
     margin: 0 auto;
@@ -92,6 +104,10 @@
     color: $gray;
     text-align: center;
     padding: 30px 0;
+
+    @include small-screen {
+        padding: 20px 0;
+    }
 }
 
 .description {

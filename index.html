@@ -11,7 +11,7 @@
     <link rel="preload" href="/font/area-normal-bold.otf" as="font" crossorigin>
   </head>
   <body x-data="blablalab"> 
-    <div x-show="showInfo" x-ref="banner" id="banner-info" :class="{ 'active': showInfo }" x-transition:enter.duration.300ms>
+    <div x-ref="banner" id="banner-info" :class="{ 'active': showInfo }" :style="{ opacity: showInfo ? 1 : 0, visibility: showInfo ? 'visible' : 'hidden', height: showInfo ? 'auto' : 0 }" x-transition:enter.duration.200ms>
       <header>
         <div class="container">
           <a x-html="brand" target="_blank" href="https://www.instagram.com/blablalab.wtf/" id="brand-info" aria-label="Brand do Site" title="Logo Blablalab"></a>
@@ -25,10 +25,10 @@
             *O estudo da comunicação. Várias áreas tem um "logia" no final, o que as certifica como ciência.
             Por que a comunicação não usa? Vilém Flusser já defendia esse termo desde 1980!
           </p>
-        </div>
-        <div class="bottom-text">
-          <h3>Queremos que você reflita e aprenda mais sobre comunicação.</h3>
-          <h3>Nosso foco é fazer Ciência Popular de forma Open-source.</h3>
+          <p>
+            Queremos que você reflita e aprenda mais sobre comunicação. 
+            Nosso foco é fazer Ciência Popular de forma Open-source.
+          </p>
         </div>
       </section>
       <footer>
